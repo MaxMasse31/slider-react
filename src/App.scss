@@ -1,0 +1,66 @@
+// Reset de styles
+
+// Réinitialisation des marges et des paddings
+html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+form, fieldset, legend, input, button, textarea, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+// Réinitialisation des styles de listes
+ul, ol {
+  list-style: none;
+}
+
+// Réinitialisation des liens
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Réinitialisation de la taille de police de base
+body {
+  font-size: 16px;
+}
+
+// Réinitialisation des bordures
+img, object, embed {
+  border: 0;
+}
+
+// Réinitialisation des éléments HTML5
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+// Réinitialisation de l'alignement vertical
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Réinitialisation des tableaux
+table, th, td {
+  border: 1px solid #000;
+}
+
+// Réinitialisation des champs de formulaire
+input, select, textarea, button {
+  font: inherit;
+}
+
+// Réinitialisation des éléments de formulaire
+input[type="button"], input[type="submit"], input[type="reset"], button {
+  cursor: pointer;
+}
+
+// Réinitialisation des médias incorporés
+iframe, object, embed {
+  max-width: 100%;
+}
+
+// Réinitialisation des éléments masqués
+.hidden {
+  display: none !important;
+}
