@@ -2,7 +2,7 @@ import React from "react";
 import leftChevron from "../../assets/left-arrow.svg";
 import rightChevron from "../../assets/right-arrow.svg";
 import "./slider.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Data from "../data/sliderData";
 
 export default function Slider() {
@@ -11,20 +11,44 @@ export default function Slider() {
   let SliderActions = {
     handleDecrease: () => {
       if (sliderValue === 1) {
-        setSliderValue(5);
+        SliderActions.updateSliderValue(5);
       } else {
-        setSliderValue(sliderValue - 1);
+        SliderActions.updateSliderValue(sliderValue - 1);
       }
     },
 
     handleIncrease: () => {
       if (sliderValue === 5) {
-        setSliderValue(1);
+        SliderActions.updateSliderValue(1);
       } else {
-        setSliderValue(sliderValue + 1);
+        SliderActions.updateSliderValue(sliderValue + 1);
       }
     },
+
+    updateSliderValue: (step) => {
+      setSliderValue((prevSliderValue) => {
+        const newValue = prevSliderValue + step;
+
+        // Implement the circular navigation as shown in the code
+        if (newValue > 5) {
+          return 1;
+        } else if (newValue < 1) {
+          return 5;
+        } else {
+          return newValue;
+        }
+      });
+    },
   };
+
+  useEffect(() => {
+    const intervalID = setInterval(
+      () => SliderActions.updateSliderValue(1),
+      2000
+    );
+
+    return () => clearInterval(intervalID);
+  }, []);
 
   return (
     <>
